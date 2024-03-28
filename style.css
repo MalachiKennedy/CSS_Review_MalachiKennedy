@@ -1,105 +1,194 @@
-html {
-  height: 100%;
-  width: 100%;
+/*ANIMATION*/
+
+/*Translate*/
+.translate{
+  width:300px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
+  transform: translate(50px, 50px);
 }
 
-/*12 Grid*/
-.layout{
-  border:2px blue solid;
-  display: grid;
-  grid: 
-    "span12 span12 span12 span12 span12 span12 span12 span12 span12 span12 span12 span12" 1fr
-    "span6 span6 span6 span6 span6 span6 . . . . . ." 1fr 
-    ". . . . . span3 span3 span3 . . . ." 1fr
-    ". . . . span1 . . . . . . ." 1fr
-    / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 8px;
+/*Rotate*/
+.rotate{
+  width:100px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
 }
-.span12{grid-area: span12; background-color:darkred}
-.span6{grid-area: span6; background-color:darkred}
-.span3{grid-area: span3; background-color:darkred}
-.span1{grid-area: span1; background-color:darkred}
-
-/*3x3 Grid*/
-.layout2{
-  width: 90%;
-  height: 300px;
-  border: 2px solid red;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  gap : 8px;
+#myDiv{
+  transform: rotate(20deg);
 }
 
-/*HOly Grail*/
-.layout3{
-  width: 99%;
-  height: 300px;
-  border: 2px solid navy;
-  display: grid;
-  grid:
-    "header header header" auto
-    "leftSide body rightSide" 1fr
-    "footer footer footer" auto
-    / auto 1fr auto;
-  gap: 8px;
+/*Scale*/
+.scale{
+  width:100px;
+  height:150px;
+  background-color: orange;
+  border: 1px solid black;
+  margin:100px;
+  transform: scale(2, 3);
 }
-.header{grid-area: header; background-color: red;}
-.leftSide{grid-area: leftSide; background-color: red;}
-.body{grid-area: body; background-color: red;}
-.rightSide{grid-area: rightSide; background-color: red;}
-.footer{grid-area: footer; background-color: red;}
-
-/*Sidebar*/
-.layout4{
-  width: 99%;
-  height: 300px;
-  border: 2px solid navy;
-  display: grid;
-  grid:
-    "sidebar body2" 1fr
-    / auto 1fr;
-  gap: 8px;
+/*ScaleX*/
+.scaleX{
+  width:100px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
+  margin:100px;
+  transform: scaleX(2);
 }
-.sidebar{grid-area:sidebar; background-color: blue;}
-.body2{grid-area: body2; background-color: blue;}
-
-/*Header Main Footer*/
-.layout5{
-  width: 99%;
-  height: 300px;
-  border: 2px solid red;
-  display: grid;
-  grid: 
-    "header2" auto
-    "main" 1fr
-    "footer2" auto
-    / 1fr;
-  gap: 8px;
-}
-.header2{grid-area: header2; background-color: lightblue;}
-.main{grid-area: main; background-color: lightblue;}
-.footer2{grid-area: footer2; background-color: lightblue;}
-
-/*Infinite Rows*/
-.layout6{
-  width: 99%;
-  height: 300px;
-  border: 2px solid blue;
-  display: grid;
-  grid-template-rows: repeat(auto-fit, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+/*ScaleY*/
+.scaleY{
+  width:100px;
+  height:100px;
+  background-color: orange;
+  border: 1px solid black;
+  margin:100px;
+  transform: scaleY(3);
 }
 
-/*Infinte Rows with Area*/
-.layout7{
-  width: 99%;
-  height: 300px;
-  border: 2px solid red;
-  display: grid;
-  grid-template-rows: repeat(auto-fit, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  
-  gap: 8px; 
+/*Skew*/
+.skew{
+  width: 300px;
+  height: 100px;  
+  background-color: orange;
+  border: 1px solid black;
+  transform: skew(10deg, 10deg)
+}
+/*SkewX*/
+.skewX{
+  width: 300px;
+  height: 100px;  
+  background-color: orange;
+  border: 1px solid black;
+  transform: skewX(20deg)
+}
+/*SkewY*/
+.skewY{
+  width: 300px;
+  height: 100px;  
+  background-color: orange;
+  border: 1px solid black;
+  transform: skewY(20deg)
+}
+
+/*Matrix*/
+#matrix{
+  transform: matrix(1,-0.3,0,1,0,0);
+}
+#matrix2D{
+  transform: matrix(1, 0, 0.5, 1, 150, 0);
+}
+
+/*Rotate in 3D*/
+#rotate3DX{
+  transform: rotateX(150deg);
+}
+#rotate3DY{
+  transform: rotateY(150deg);
+}
+#rotate3DZ{
+  transform: rotateZ(90deg);
+}
+
+/*Animate It*/
+.rotate:hover {
+  transform: translate3d(20px, 20px, 20px);
+}
+
+
+/*Decorate div class with perry*/
+.perry{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border: 1px solid black;
+  transition: width 2s, height 2s, background-color 3s;
+}
+
+/*Transitions*/
+#transition:hover{
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+/*Linear*/
+#linear:hover{
+  transition-timing-function: linear;
+}
+
+/*Ease*/
+#ease:hover{
+  transition-timing-function: ease;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+/*Ease In*/
+#easeIn:hover{
+  transition-timing-function: ease-in;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+/*Ease Out*/
+#easeOut:hover{
+  transition-timing-function: ease-out;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+/*Ease In Out*/
+#easeInOut:hover{
+  transition-timing-function: ease-in-out;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+/*Animate with div class phineas*/
+.phineas{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: background;
+  animation-duration: 5s;
+}
+
+/*Animation Background*/
+@keyframes background{
+  from{background-color: red;}
+  to{background-color: blue;}
+}
+
+/*Animation Background & Position*/
+@keyframes position{
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+#position{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: background;
+  animation-duration: 5s;
+}
+
+/*Animation Delay*/
+#delay{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: position;
+  animation-duration: 4s;
+  animation-delay: 2s;
 }
